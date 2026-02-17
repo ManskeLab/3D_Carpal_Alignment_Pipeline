@@ -2,7 +2,7 @@
 
 This repository contains the Jupyter notebook and Python functions required for the following manuscript:
 
-**Saini, J., Ritchie, B., Hasselaar, C., White, N.J., Roach, K.E., Manske, S.L. ** Three-Dimensional Morphology-Based Approaches for Measuring Dorsal Scaphoid Translation. Submitted to the Journal of Orthopaedic Research (February 2026)
+**Saini, J., Ritchie, B., Hasselaar, C., White, N.J., Roach, K.E., and Manske, S.L.** Three-Dimensional Morphology-Based Approaches for Measuring Dorsal Scaphoid Translation. Submitted to the Journal of Orthopaedic Research (February 2026)
 
 The main Jupyter notebook and required Python functions are provided in the `python-files` folder. Sample meshes of two healthy controls and two participants with SLIL injury are provided in the `sample-meshes` folder. 
 
