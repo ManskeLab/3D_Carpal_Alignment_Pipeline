@@ -17,4 +17,6 @@ Techniques for the following carpal alignment measurements are provided in this 
 - **Scapholunate Intervals (Proximal, Palmar, Distal, Dorsal, and Central)**
 - **Dorsal Scaphoid Translation Technique 1: Dorsal Tangential Line (DTL) Method**
 - **Dorsal Scaphoid Translation Technique 2: Posterior Radioscaphoid Angle (PRSA) Method**
+
+Cite the code: [![DOI](https://zenodo.org/badge/1160168873.svg)](https://doi.org/10.5281/zenodo.18672968)
     
