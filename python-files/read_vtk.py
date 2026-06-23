@@ -1,10 +1,10 @@
 # read_vtk.py
 #  contains function to read in a VTK file and apply any necessary transformations:
-# - read_vtk: basic function for reading in a VTK mesh file. This setup is specific to the dataset used in KRASL and will need to be adjusted for other datasets depending on the orientation of the meshes and what transformations are necessary to match right hand orientation.
+# - read_vtk    
 import vtk
 
 
-def read_vtk(vtk_path, hand) -> tuple[vtk.vtkPolyData, vtk.vtkPoints, vtk.vtkPointData]:
+def read_vtk(vtk_path, hand, segmentation_from_itk_snap) -> tuple[vtk.vtkPolyData, vtk.vtkPoints, vtk.vtkPointData]:
     """This function reads a VTK file and returns the polydata, points, and point data.
 
     Args:
@@ -32,6 +32,16 @@ def read_vtk(vtk_path, hand) -> tuple[vtk.vtkPolyData, vtk.vtkPoints, vtk.vtkPoi
         point_data = polydata.GetPointData()
     else:
         polydata = reader.GetOutput()
+        points = polydata.GetPoints()
+        point_data = polydata.GetPointData()
+    if segmentation_from_itk_snap:
+        transform = vtk.vtkTransform()
+        transform.RotateX(90)
+        transform_filter = vtk.vtkTransformPolyDataFilter()
+        transform_filter.SetInputData(polydata)
+        transform_filter.SetTransform(transform)
+        transform_filter.Update()
+        polydata = transform_filter.GetOutput()
         points = polydata.GetPoints()
         point_data = polydata.GetPointData()
     return polydata, points, point_data

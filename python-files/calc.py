@@ -38,7 +38,7 @@ def calculate_2D_angle(sc_2d_vector, lu_2d_vector):
         angle (float): The angle between the two vectors in degrees.
     """
     sc_vector = sc_2d_vector / np.linalg.norm(sc_2d_vector)
-    lu_vector = lu_2d_vector / np.linalg.norm(lu_vector)
+    lu_vector = lu_2d_vector / np.linalg.norm(lu_2d_vector)
     sc_lun_dot_product = np.dot(sc_vector, lu_vector)
     angle_radians = np.arccos(sc_lun_dot_product)
     angle = np.degrees(angle_radians)
